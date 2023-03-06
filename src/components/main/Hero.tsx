@@ -17,7 +17,6 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
         toggleActions: "play none none none",
       },
     });
-
     tl.to(
       allRefs(".mynameis"),
       {

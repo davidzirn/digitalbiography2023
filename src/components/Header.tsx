@@ -45,11 +45,16 @@ const Header: React.FC<Props> = ({ ...otherProps }) => {
             </Text>
           </Box>
         </Box>
-        <Box as="nav" gap="1" display="flex" alignItems="center">
+        <Box
+          as="nav"
+          gap="1"
+          display={{ base: "none", desktop: "flex" }}
+          alignItems="center"
+        >
           {NAVIGATION_MENU.map((object, index) => {
             return (
               <Box
-              key={index}
+                key={index}
                 className="navAnim"
                 data-group
                 position="relative"

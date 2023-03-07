@@ -36,12 +36,13 @@ const ScrollWidget: React.FC<Props> = ({ ...otherProps }) => {
 
   return (
     <Box
+      display={{ base: "none", desktop: "block" }}
       ref={trigger}
       transform="translateY(-50%)"
       position="fixed"
       zIndex="1000"
       top="50%"
-      left="5"
+      left={{ base: "1", desktop: "5" }}
       {...otherProps}
     >
       {NAVIGATION_MENU.map((object, index) => {

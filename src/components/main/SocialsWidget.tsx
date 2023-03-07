@@ -60,8 +60,8 @@ const SocialsWidget: React.FC<Props> = ({ ...otherProps }) => {
       display="flex"
       flexDirection="column"
       position="fixed"
-      bottom="5"
-      right="5"
+      bottom={{ base: "2", desktop: "5" }}
+      right={{ base: "2", desktop: "5" }}
       className="bubbles"
       zIndex="10000"
       {...otherProps}

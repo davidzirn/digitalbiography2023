@@ -67,6 +67,14 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
       duration: 1,
       scale: 1,
     });
+    tl.to(
+      allRefs(".image-abs"),
+      {
+        duration: 1,
+        y: 0,
+      },
+      "-=1s"
+    );
   });
 
   return (
@@ -80,8 +88,9 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      px="10"
+      px={{ base: "6", desktop: "10" }}
       color={COLORS.primary.light}
+      overflow="hidden"
     >
       <Box
         width="100%"
@@ -92,29 +101,38 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
         position="relative"
       >
         <Box position="relative" zIndex="1" flex="1">
-          <Box width="fit-content" position="relative">
-            <Box overflow="hidden">
+          <Box
+            width={{ base: "100%", desktop: "fit-content" }}
+            position="relative"
+          >
+            <Box width="100%" overflow="hidden">
               <Text
                 className="mynameis"
                 as="p"
+                textAlign={{ base: "center", desktop: "left" }}
                 opacity={0}
                 transform="translateX(-100%)"
                 fontFamily="Montserrat-Light"
                 color={COLORS.white}
                 variant="paragraph"
               >
-                <Text as="span" fontSize="30px" fontFamily="Montserrat-Black">
+                <Text
+                  as="span"
+                  fontSize={{ base: "18px", desktop: "30px" }}
+                  fontFamily="Montserrat-Black"
+                >
                   Design
                 </Text>
                 , this is
               </Text>
               <Text
+                textAlign={{ base: "center", desktop: "left" }}
                 opacity={0}
                 className="headline"
-                fontSize="150px"
+                fontSize={{ base: "80px", desktop: "150px" }}
                 as="h1"
                 transform="translateY(100%)"
-                lineHeight="150px"
+                lineHeight={{ base: "95px", desktop: "150px" }}
                 color={COLORS.primary.light}
                 variant="gloock"
               >
@@ -122,6 +140,7 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
               </Text>
             </Box>
             <Box
+              display={{ base: "none", desktop: "block" }}
               right="0"
               bottom="0"
               overflow="hidden"
@@ -132,9 +151,13 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
                 transform="translateX(-100%)"
                 className="iam"
                 color={COLORS.white}
-                fontSize="20px"
+                fontSize={{ base: "13px", desktop: "20px" }}
               >
-                <Text fontSize="20px" fontFamily="Montserrat-Black" as="span">
+                <Text
+                  fontSize={{ base: "13px", desktop: "20px" }}
+                  fontFamily="Montserrat-Black"
+                  as="span"
+                >
                   &
                 </Text>{" "}
                 I am{" "}
@@ -142,11 +165,12 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
             </Box>
           </Box>
           <Box
+            textAlign={{ base: "center", desktop: "left" }}
             justifyContent="flex-end"
             // display="flex"
             alignItems="center"
             gap="2"
-            marginTop="5"
+            marginTop={{ base: "2", desktop: "5" }}
           >
             <Text
               as="h3"
@@ -204,6 +228,7 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
           </Box>
         </Box>
         <Box
+          display={{ base: "none", desktop: "block" }}
           ml="10"
           position="absolute"
           right="0"
@@ -213,12 +238,10 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
           maxWidth="70%"
           overflow="hidden"
         >
-          <Box
-            transform="translateX(100%)"
-            className="image"
-            position="relative"
-          >
+          <Box position="relative">
             <Image
+              transform="translateX(100%)"
+              className="image"
               alt="happy-man"
               zIndex={1}
               position="relative"
@@ -238,6 +261,32 @@ const Hero: React.FC<Props> = ({ ...otherProps }) => {
             />
           </Box>
         </Box>
+      </Box>
+      <Box
+        className="image-abs"
+        transform="translateY(100%)"
+        display={{ base: "block", desktop: "none" }}
+        opacity="30%"
+        left="0"
+        position="absolute"
+        width="150%"
+        bottom="0"
+      >
+        <Image
+          maxWidth={{ base: "500px", mobileM: "700px" }}
+          mx="auto"
+          position="relative"
+          src="/assets/images/happy-man.png"
+        />
+        <Box
+          borderWidth="1"
+          background={`linear-gradient(180deg,#00000000,${COLORS.primary.dark})`}
+          width="100%"
+          height="100%"
+          position="absolute"
+          top="0"
+          left="0"
+        />
       </Box>
     </Box>
   );

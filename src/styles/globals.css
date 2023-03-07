@@ -75,3 +75,6 @@
     opacity: 1;
   }
 }
+body {
+  background-color: #131313 !important;
+}

@@ -7,7 +7,7 @@ export const theme = extendTheme({
     mobileS: "370px",
     mobileM: "400px",
     tablet: "700px",
-    desktop: "1050px",
+    desktop: "900px",
     desktopM: "1200px",
   },
   space: {
@@ -31,15 +31,15 @@ export const theme = extendTheme({
       variants: {
         paragraph: {
           fontFamily: "Montserrat-Medium",
-          fontSize: "16px",
-          lineHeight: "26px",
+          fontSize: { base: "14px", desktop: "16px" },
+          lineHeight: "30px",
         },
         gloock: {
           fontFamily: "Gloock",
         },
         h1: {
           fontFamily: "Montserrat-Bold",
-          fontSize: "50px",
+          fontSize: { base: "50px", desktop: "50px" },
           lineHeight: "80px",
         },
         h2: {
@@ -49,8 +49,8 @@ export const theme = extendTheme({
         },
         h3: {
           fontFamily: "Montserrat-Bold",
-          fontSize: "30px",
-          lineHeight: "40px",
+          fontSize: { base: "20px", desktop: "30px" },
+          lineHeight: { base: "30px", desktop: "40px" },
         },
         h4: {
           fontFamily: "Montserrat-Bold",

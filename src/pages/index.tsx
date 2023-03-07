@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import SocialsWidget from "@/components/main/SocialsWidget";
 import ScrollWidget from "@/components/main/ScrollWidget";
 import AboutMe from "@/components/main/AboutMe";
+import Layout from "@/components/UI/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function Home() {
 
       <Header />
       <Hero />
+
       <AboutMe />
       <SocialsWidget />
       <ScrollWidget />
